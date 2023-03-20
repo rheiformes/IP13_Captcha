@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CaptchaImageView: UIImageView {
+class CaptchaImageView: UIImageView, Shakeable {
 
     /*
     // Only override draw() if you perform custom drawing.
