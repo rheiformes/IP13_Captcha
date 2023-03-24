@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initialView()
+        setImgGestures()
     }
 
     func initialView() {
@@ -33,6 +34,15 @@ class ViewController: UIViewController {
     func resetView() {
         shakeImages()
         setNewImageViews()
+    }
+    
+    func setImgGestures() {
+        for img in self.capImgGrid {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(imgTapped))
+//            print("set + \(img)")
+            img.addGestureRecognizer(tap)
+            img.isUserInteractionEnabled = true
+        }
     }
     
     func shakeImages() {
@@ -95,10 +105,16 @@ class ViewController: UIViewController {
     }
     
     
-    //TODO: change this to use UITapGestureRecognizer since UIImageViews don't default respond to user interaction
-    @IBAction func userSelected(sender: CaptchaImageView) {
+    //[DONE] TODO: change this to use UITapGestureRecognizer since UIImageViews don't default respond to user interaction
+    
+
+    @objc func imgTapped(_ sender: UITapGestureRecognizer) {
         //verify
-        if(sender.correct) {
+        print("tapped!!!!!!!")
+        let a = sender.view as! CaptchaImageView
+        
+        
+        if (a.correct) {
             goToTransition()
         }
         else {

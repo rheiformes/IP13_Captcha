@@ -16,9 +16,16 @@ class CaptchaImageView: UIImageView, Shakeable {
         // Drawing code
     }
     */
-
-    var correct: Bool = false
     
+
+    
+    var correct: Bool = false
+    /*
+    let tap = UITapGestureRecognizer(target: CaptchaImageView.self, action: #selector(CaptchaImageView.imgTap))
+    CaptchaImageView.addGestureRecognizer(tap)
+    self.isUserInteractionEnabled = true
+    */
+    //inherited implementation from uiimageview
     func shake() {
             let animation = CABasicAnimation(keyPath: "position")
             
@@ -31,4 +38,22 @@ class CaptchaImageView: UIImageView, Shakeable {
             self.layer.add(animation, forKey: "position")
         }
 
+    /*
+    @objc func imgTap() {
+        print("tapped!")
+    }
+    */
+    
+    /* source: https://stackoverflow.com/questions/31082866/how-to-use-uigesturerecognizerdelegate
+    
+     //this one doesn't work tho
+     
+     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        print("tapped?")
+        return true
+    }
+    */
+    
+    
+    
 }
