@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     
     var capImgGrid : [CaptchaImageView] = []
     //var imgNamesFromDirectory: [String] = []
+    
+    @IBOutlet var keyLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -55,24 +58,25 @@ class ViewController: UIViewController {
         let randIndexCorrect = Int.random(in: 0...self.capImgGrid.count-1)
         
         for i in 0...self.capImgGrid.count-1 {
-            capImgGrid[i].image = UIImage(newNames[i]) //TODO: figure out how to properly load this
+            let imgName: String = newNames[i]
+            capImgGrid[i].image = UIImage(named: imgName) //[DONE 3/24] TODO: figure out how to properly load this
             if (i==randIndexCorrect) {
                 capImgGrid[i].correct = true
+                
+                let suffixStart = imgName.lastIndex(of: ".") //?? (imgName.count - 5)
+                self.keyLbl.text = imgName.substring(to: suffixStart!)
+                
+                
             }
             else {
                 capImgGrid[i].correct = false
             }
         }
-        
-        
-        
-        
-        
     }
     
     /*
-     [FIXED: note - REMEMBER TO USE THE CORRECT SLASHES, /, NOT \, to get the files]
-     TODO: figure out why directory isn't pulling up
+     [FIXED] TODO: 3/22- figure out why directory isn't pulling up
+     3/24: note - REMEMBER TO USE THE CORRECT SLASHES, /, NOT \, to get the files]
      */
     
     func getNewImgNames() -> [String] {

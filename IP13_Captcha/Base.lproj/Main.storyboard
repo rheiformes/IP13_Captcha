@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d2R-wR-ZBj">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d2R-wR-ZBj" userLabel="img grid view">
                                 <rect key="frame" x="41.5" y="282.5" width="331" height="331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DOP-uo-2BX">
@@ -46,27 +46,39 @@
                                     <constraint firstAttribute="width" secondItem="d2R-wR-ZBj" secondAttribute="height" multiplier="1:1" id="eGR-wj-jFe"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap the text which looks like this" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI6-mi-KM4">
-                                <rect key="frame" x="62" y="123" width="291" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8G-0C-GkE">
-                                <rect key="frame" x="191" y="167" width="32" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lKb-IO-wj9" userLabel="text stack view">
+                                <rect key="frame" x="41.5" y="139" width="331" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the text which looks like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI6-mi-KM4">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="XCR-MZ-0VV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="key" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8G-0C-GkE">
+                                        <rect key="frame" x="0.0" y="30" width="331" height="30"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3fh-VP-Usd"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="d2R-wR-ZBj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2Jt-Le-o80"/>
                             <constraint firstItem="d2R-wR-ZBj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BX1-i9-ldn"/>
+                            <constraint firstItem="lKb-IO-wj9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="IZQ-CM-icu"/>
                             <constraint firstItem="d2R-wR-ZBj" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.8" id="Lwf-fS-ok4"/>
+                            <constraint firstItem="lKb-IO-wj9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="M4b-9y-0PY"/>
+                            <constraint firstItem="lKb-IO-wj9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ovV-wy-hlv"/>
                         </constraints>
                     </view>
                     <connections>
@@ -74,6 +86,7 @@
                         <outlet property="capView2" destination="LSk-K4-ydc" id="SfS-UT-ire"/>
                         <outlet property="capView3" destination="e5u-N3-OOJ" id="Q7W-IV-RAa"/>
                         <outlet property="capView4" destination="rcg-V7-AbH" id="GJK-0g-4a6"/>
+                        <outlet property="keyLbl" destination="E8G-0C-GkE" id="8HS-QZ-Uxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
