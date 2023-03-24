@@ -93,6 +93,84 @@
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="b1p-gu-4C4">
+            <objects>
+                <viewController id="EH9-rf-202" customClass="ViewController" customModule="IP13_Captcha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tUs-UU-IqO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oG7-iZ-fSi" userLabel="img grid view">
+                                <rect key="frame" x="41.5" y="282.5" width="331" height="331"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xbT-UO-BtM">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="155.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UeB-9u-Awt" customClass="CaptchaImageView" customModule="IP13_Captcha" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="155.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-Ym-uI6" customClass="CaptchaImageView" customModule="IP13_Captcha" customModuleProvider="target">
+                                                <rect key="frame" x="175.5" y="0.0" width="155.5" height="155.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-CL-S8z">
+                                        <rect key="frame" x="0.0" y="175.5" width="331" height="155.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tjs-pk-OPg" customClass="CaptchaImageView" customModule="IP13_Captcha" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="155.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hkQ-AH-bZ5" customClass="CaptchaImageView" customModule="IP13_Captcha" customModuleProvider="target">
+                                                <rect key="frame" x="175.5" y="0.0" width="155.5" height="155.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oG7-iZ-fSi" secondAttribute="height" multiplier="1:1" id="2fO-Jt-bdS"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P0j-EO-YIq" userLabel="text stack view">
+                                <rect key="frame" x="41.5" y="139" width="331" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the text which sounds like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSB-JI-L6P">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="F8t-5f-rIR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="OuZ-uZ-WNw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iNa-4e-WB8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P0j-EO-YIq" firstAttribute="centerX" secondItem="tUs-UU-IqO" secondAttribute="centerX" id="5Gn-LF-PNI"/>
+                            <constraint firstItem="oG7-iZ-fSi" firstAttribute="centerX" secondItem="tUs-UU-IqO" secondAttribute="centerX" id="5Th-de-Eib"/>
+                            <constraint firstItem="P0j-EO-YIq" firstAttribute="top" secondItem="iNa-4e-WB8" secondAttribute="top" constant="95" id="9Nw-8Q-gFi"/>
+                            <constraint firstItem="oG7-iZ-fSi" firstAttribute="width" secondItem="iNa-4e-WB8" secondAttribute="width" multiplier="0.8" id="Da8-u3-yV2"/>
+                            <constraint firstItem="oG7-iZ-fSi" firstAttribute="centerY" secondItem="tUs-UU-IqO" secondAttribute="centerY" id="M9p-xM-6ID"/>
+                            <constraint firstItem="P0j-EO-YIq" firstAttribute="width" secondItem="tUs-UU-IqO" secondAttribute="width" multiplier="0.8" id="Sz4-Xf-4qb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="capView1" destination="UeB-9u-Awt" id="kSs-X1-5cY"/>
+                        <outlet property="capView2" destination="mZU-Ym-uI6" id="Lc5-i7-103"/>
+                        <outlet property="capView3" destination="tjs-pk-OPg" id="3Zj-zd-Ikt"/>
+                        <outlet property="capView4" destination="hkQ-AH-bZ5" id="t0R-2b-M5A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73n-Kl-qvK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696" y="84"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
