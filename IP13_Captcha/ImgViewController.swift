@@ -7,12 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ImgViewController: UIViewController {
 
     @IBOutlet var capView1: CaptchaImageView!
     @IBOutlet var capView2: CaptchaImageView!
     @IBOutlet var capView3: CaptchaImageView!
     @IBOutlet var capView4: CaptchaImageView!
+    
+    var wrongCount = 0
     
     var capImgGrid : [CaptchaImageView] = []
     //var imgNamesFromDirectory: [String] = []
@@ -115,16 +117,21 @@ class ViewController: UIViewController {
         
         
         if (a.correct) {
-            goToTransition()
+            performSegue(withIdentifier: "correct", sender: self)
         }
         else {
-            resetView()
+            wrongCount += 1
+            if wrongCount >= 2 {
+                performSegue(withIdentifier: "wrongTwice", sender: self)
+            }
+            else {
+                resetView()
+            }
+            
         }
     }
     
-    func goToTransition() {
-        
-    }
+
     
     
     

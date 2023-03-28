@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Img View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IP13_Captcha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ImgViewController" customModule="IP13_Captcha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,43 +87,86 @@
                         <outlet property="capView3" destination="e5u-N3-OOJ" id="Q7W-IV-RAa"/>
                         <outlet property="capView4" destination="rcg-V7-AbH" id="GJK-0g-4a6"/>
                         <outlet property="keyLbl" destination="E8G-0C-GkE" id="8HS-QZ-Uxf"/>
+                        <segue destination="EH9-rf-202" kind="presentation" identifier="correct" id="pnR-UJ-h7n"/>
+                        <segue destination="NkI-PA-47X" kind="presentation" identifier="wrongTwice" id="f1m-Ce-o8U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Audio View Controller-->
         <scene sceneID="b1p-gu-4C4">
             <objects>
-                <viewController id="EH9-rf-202" customClass="ViewController" customModule="IP13_Captcha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EH9-rf-202" customClass="AudioViewController" customModule="IP13_Captcha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tUs-UU-IqO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oG7-iZ-fSi" userLabel="img grid view">
-                                <rect key="frame" x="41.5" y="282.5" width="331" height="331"/>
+                                <rect key="frame" x="41.5" y="255.5" width="331" height="331"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xbT-UO-BtM">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="155.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDP-ze-0v2">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="97"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                        </accessibility>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="click to play:">
+                                            <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="initialAudioSamplePlayed:" destination="EH9-rf-202" eventType="touchUpInside" id="ca7-Pl-ZSe"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xbT-UO-BtM">
+                                        <rect key="frame" x="0.0" y="117" width="331" height="97"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UeB-9u-Awt" customClass="CaptchaImageView" customModule="IP13_Captcha" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="155.5"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-Ym-uI6" customClass="CaptchaImageView" customModule="IP13_Captcha" customModuleProvider="target">
-                                                <rect key="frame" x="175.5" y="0.0" width="155.5" height="155.5"/>
-                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otu-XX-3dv" customClass="CaptchaButton" customModule="IP13_Captcha" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="97"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Button">
+                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="EH9-rf-202" eventType="touchUpInside" id="ged-WX-QVc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXa-L2-xeE" customClass="CaptchaButton" customModule="IP13_Captcha" customModuleProvider="target">
+                                                <rect key="frame" x="175.5" y="0.0" width="155.5" height="97"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Button">
+                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="EH9-rf-202" eventType="touchUpInside" id="hvV-gF-dTD"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-CL-S8z">
-                                        <rect key="frame" x="0.0" y="175.5" width="331" height="155.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-CL-S8z">
+                                        <rect key="frame" x="0.0" y="234" width="331" height="97"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tjs-pk-OPg" customClass="CaptchaImageView" customModule="IP13_Captcha" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="155.5"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hkQ-AH-bZ5" customClass="CaptchaImageView" customModule="IP13_Captcha" customModuleProvider="target">
-                                                <rect key="frame" x="175.5" y="0.0" width="155.5" height="155.5"/>
-                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXw-gx-RR8" customClass="CaptchaButton" customModule="IP13_Captcha" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="97"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Button">
+                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="EH9-rf-202" eventType="touchUpInside" id="T0z-30-ewQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WT-Yy-9DH" customClass="CaptchaButton" customModule="IP13_Captcha" customModuleProvider="target">
+                                                <rect key="frame" x="175.5" y="0.0" width="155.5" height="97"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Button">
+                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="EH9-rf-202" eventType="touchUpInside" id="99g-qw-w9d"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -137,7 +180,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the text which sounds like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSB-JI-L6P">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="F8t-5f-rIR"/>
+                                            <constraint firstAttribute="height" constant="60" id="F8t-5f-rIR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -160,18 +203,75 @@
                             <constraint firstItem="P0j-EO-YIq" firstAttribute="width" secondItem="tUs-UU-IqO" secondAttribute="width" multiplier="0.8" id="Sz4-Xf-4qb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="K0f-l6-bkD"/>
                     <connections>
-                        <outlet property="capView1" destination="UeB-9u-Awt" id="kSs-X1-5cY"/>
-                        <outlet property="capView2" destination="mZU-Ym-uI6" id="Lc5-i7-103"/>
-                        <outlet property="capView3" destination="tjs-pk-OPg" id="3Zj-zd-Ikt"/>
-                        <outlet property="capView4" destination="hkQ-AH-bZ5" id="t0R-2b-M5A"/>
+                        <outlet property="b1" destination="otu-XX-3dv" id="fKH-oS-7hw"/>
+                        <outlet property="b2" destination="eXa-L2-xeE" id="EdW-tF-XDM"/>
+                        <outlet property="b3" destination="RXw-gx-RR8" id="B0q-Qf-PbC"/>
+                        <outlet property="b4" destination="3WT-Yy-9DH" id="ygZ-S6-ZUl"/>
+                        <outlet property="playBtn" destination="VDP-ze-0v2" id="K8v-Nx-PFF"/>
+                        <segue destination="7a7-UP-HHb" kind="presentation" identifier="correctAudio" id="wcM-v6-Kp3"/>
+                        <segue destination="NkI-PA-47X" kind="presentation" identifier="wrongTwiceAudio" id="uk6-iO-sD3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73n-Kl-qvK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="84"/>
+            <point key="canvasLocation" x="775" y="74"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iK5-Vf-PqX">
+            <objects>
+                <viewController id="NkI-PA-47X" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BNB-3b-04S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="are you a bot? very sus..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSj-Z3-R5K">
+                                <rect key="frame" x="113" y="411" width="189" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gGE-zO-cNm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ms2-oH-gCF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UNK-oH-ezN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664" y="771"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XUq-VV-dqm">
+            <objects>
+                <viewController id="7a7-UP-HHb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ebq-TA-GNK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="you made it! woohoo!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sev-iv-jMI">
+                                <rect key="frame" x="113" y="411" width="168" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A4i-7t-Qok"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="x2u-u4-Gb7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sdy-cY-1Iy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1516" y="84"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uk6-iO-sD3"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

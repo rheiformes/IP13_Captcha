@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		220A55D029CB5F2400E88DE5 /* Shakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A55CF29CB5F2400E88DE5 /* Shakeable.swift */; };
+		224CA01629D3469500C227B8 /* CaptchaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA01529D3469500C227B8 /* CaptchaButton.swift */; };
+		224CA01A29D349A000C227B8 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA01929D349A000C227B8 /* AudioViewController.swift */; };
 		22DEA1AF29C8C26700066A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA1AE29C8C26700066A1C /* AppDelegate.swift */; };
 		22DEA1B129C8C26700066A1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA1B029C8C26700066A1C /* SceneDelegate.swift */; };
-		22DEA1B329C8C26700066A1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA1B229C8C26700066A1C /* ViewController.swift */; };
+		22DEA1B329C8C26700066A1C /* ImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA1B229C8C26700066A1C /* ImgViewController.swift */; };
 		22DEA1B629C8C26700066A1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA1B429C8C26700066A1C /* Main.storyboard */; };
 		22DEA1B829C8C26C00066A1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA1B729C8C26C00066A1C /* Assets.xcassets */; };
 		22DEA1BB29C8C26C00066A1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA1B929C8C26C00066A1C /* LaunchScreen.storyboard */; };
@@ -20,10 +22,12 @@
 
 /* Begin PBXFileReference section */
 		220A55CF29CB5F2400E88DE5 /* Shakeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shakeable.swift; sourceTree = "<group>"; };
+		224CA01529D3469500C227B8 /* CaptchaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptchaButton.swift; sourceTree = "<group>"; };
+		224CA01929D349A000C227B8 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		22DEA1AB29C8C26700066A1C /* IP13_Captcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IP13_Captcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DEA1AE29C8C26700066A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22DEA1B029C8C26700066A1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22DEA1B229C8C26700066A1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22DEA1B229C8C26700066A1C /* ImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgViewController.swift; sourceTree = "<group>"; };
 		22DEA1B529C8C26700066A1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22DEA1B729C8C26C00066A1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22DEA1BA29C8C26C00066A1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,7 +71,9 @@
 				220A55CF29CB5F2400E88DE5 /* Shakeable.swift */,
 				22DEA1B029C8C26700066A1C /* SceneDelegate.swift */,
 				22DEA1C429C8C45E00066A1C /* CaptchaImageView.swift */,
-				22DEA1B229C8C26700066A1C /* ViewController.swift */,
+				224CA01529D3469500C227B8 /* CaptchaButton.swift */,
+				22DEA1B229C8C26700066A1C /* ImgViewController.swift */,
+				224CA01929D349A000C227B8 /* AudioViewController.swift */,
 				22DEA1B429C8C26700066A1C /* Main.storyboard */,
 				22DEA1B729C8C26C00066A1C /* Assets.xcassets */,
 				22DEA1B929C8C26C00066A1C /* LaunchScreen.storyboard */,
@@ -148,10 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22DEA1B329C8C26700066A1C /* ViewController.swift in Sources */,
+				22DEA1B329C8C26700066A1C /* ImgViewController.swift in Sources */,
 				22DEA1AF29C8C26700066A1C /* AppDelegate.swift in Sources */,
 				22DEA1B129C8C26700066A1C /* SceneDelegate.swift in Sources */,
 				22DEA1C529C8C45E00066A1C /* CaptchaImageView.swift in Sources */,
+				224CA01629D3469500C227B8 /* CaptchaButton.swift in Sources */,
+				224CA01A29D349A000C227B8 /* AudioViewController.swift in Sources */,
 				220A55D029CB5F2400E88DE5 /* Shakeable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
