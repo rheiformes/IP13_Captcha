@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		220A55D029CB5F2400E88DE5 /* Shakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A55CF29CB5F2400E88DE5 /* Shakeable.swift */; };
+		222BD06829D5EF0900228536 /* alien_cku3k.wav in Resources */ = {isa = PBXBuildFile; fileRef = 222BD05F29D5EF0800228536 /* alien_cku3k.wav */; };
+		222BD06929D5EF0900228536 /* helicopter_nt6v5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 222BD06029D5EF0800228536 /* helicopter_nt6v5.wav */; };
+		222BD06A29D5EF0900228536 /* ocean_8cd65.wav in Resources */ = {isa = PBXBuildFile; fileRef = 222BD06129D5EF0900228536 /* ocean_8cd65.wav */; };
+		222BD06B29D5EF0900228536 /* robot_cgy3e.wav in Resources */ = {isa = PBXBuildFile; fileRef = 222BD06229D5EF0900228536 /* robot_cgy3e.wav */; };
+		222BD06C29D5EF0900228536 /* scratched_rv6te.wav in Resources */ = {isa = PBXBuildFile; fileRef = 222BD06329D5EF0900228536 /* scratched_rv6te.wav */; };
+		222BD06D29D5EF0900228536 /* magic_x6tj8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 222BD06429D5EF0900228536 /* magic_x6tj8.wav */; };
+		222BD06E29D5EF0900228536 /* cassette_t6phm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 222BD06529D5EF0900228536 /* cassette_t6phm.wav */; };
+		222BD06F29D5EF0900228536 /* electricity_bp5k6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 222BD06629D5EF0900228536 /* electricity_bp5k6.wav */; };
+		222BD07029D5EF0900228536 /* chord_e6jv9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 222BD06729D5EF0900228536 /* chord_e6jv9.wav */; };
 		224CA01629D3469500C227B8 /* CaptchaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA01529D3469500C227B8 /* CaptchaButton.swift */; };
 		224CA01A29D349A000C227B8 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CA01929D349A000C227B8 /* AudioViewController.swift */; };
 		22DEA1AF29C8C26700066A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA1AE29C8C26700066A1C /* AppDelegate.swift */; };
@@ -22,6 +31,15 @@
 
 /* Begin PBXFileReference section */
 		220A55CF29CB5F2400E88DE5 /* Shakeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shakeable.swift; sourceTree = "<group>"; };
+		222BD05F29D5EF0800228536 /* alien_cku3k.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alien_cku3k.wav; sourceTree = "<group>"; };
+		222BD06029D5EF0800228536 /* helicopter_nt6v5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = helicopter_nt6v5.wav; sourceTree = "<group>"; };
+		222BD06129D5EF0900228536 /* ocean_8cd65.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ocean_8cd65.wav; sourceTree = "<group>"; };
+		222BD06229D5EF0900228536 /* robot_cgy3e.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robot_cgy3e.wav; sourceTree = "<group>"; };
+		222BD06329D5EF0900228536 /* scratched_rv6te.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratched_rv6te.wav; sourceTree = "<group>"; };
+		222BD06429D5EF0900228536 /* magic_x6tj8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = magic_x6tj8.wav; sourceTree = "<group>"; };
+		222BD06529D5EF0900228536 /* cassette_t6phm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cassette_t6phm.wav; sourceTree = "<group>"; };
+		222BD06629D5EF0900228536 /* electricity_bp5k6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = electricity_bp5k6.wav; sourceTree = "<group>"; };
+		222BD06729D5EF0900228536 /* chord_e6jv9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chord_e6jv9.wav; sourceTree = "<group>"; };
 		224CA01529D3469500C227B8 /* CaptchaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptchaButton.swift; sourceTree = "<group>"; };
 		224CA01929D349A000C227B8 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		22DEA1AB29C8C26700066A1C /* IP13_Captcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IP13_Captcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +65,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222BD05E29D5EEE900228536 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				222BD05F29D5EF0800228536 /* alien_cku3k.wav */,
+				222BD06529D5EF0900228536 /* cassette_t6phm.wav */,
+				222BD06729D5EF0900228536 /* chord_e6jv9.wav */,
+				222BD06629D5EF0900228536 /* electricity_bp5k6.wav */,
+				222BD06029D5EF0800228536 /* helicopter_nt6v5.wav */,
+				222BD06429D5EF0900228536 /* magic_x6tj8.wav */,
+				222BD06129D5EF0900228536 /* ocean_8cd65.wav */,
+				222BD06229D5EF0900228536 /* robot_cgy3e.wav */,
+				222BD06329D5EF0900228536 /* scratched_rv6te.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		22DEA1A229C8C26700066A1C = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +100,7 @@
 		22DEA1AD29C8C26700066A1C /* IP13_Captcha */ = {
 			isa = PBXGroup;
 			children = (
+				222BD05E29D5EEE900228536 /* Sounds */,
 				22DEA1C229C8C35C00066A1C /* Captcha files */,
 				22DEA1AE29C8C26700066A1C /* AppDelegate.swift */,
 				220A55CF29CB5F2400E88DE5 /* Shakeable.swift */,
@@ -142,8 +177,17 @@
 			files = (
 				22DEA1C329C8C35C00066A1C /* Captcha files in Resources */,
 				22DEA1BB29C8C26C00066A1C /* LaunchScreen.storyboard in Resources */,
+				222BD06A29D5EF0900228536 /* ocean_8cd65.wav in Resources */,
+				222BD06C29D5EF0900228536 /* scratched_rv6te.wav in Resources */,
+				222BD06B29D5EF0900228536 /* robot_cgy3e.wav in Resources */,
+				222BD06E29D5EF0900228536 /* cassette_t6phm.wav in Resources */,
+				222BD07029D5EF0900228536 /* chord_e6jv9.wav in Resources */,
 				22DEA1B829C8C26C00066A1C /* Assets.xcassets in Resources */,
+				222BD06929D5EF0900228536 /* helicopter_nt6v5.wav in Resources */,
+				222BD06D29D5EF0900228536 /* magic_x6tj8.wav in Resources */,
+				222BD06F29D5EF0900228536 /* electricity_bp5k6.wav in Resources */,
 				22DEA1B629C8C26700066A1C /* Main.storyboard in Resources */,
+				222BD06829D5EF0900228536 /* alien_cku3k.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,8 +52,10 @@ class AudioViewController: UIViewController {
         for i in 0...self.capBtnGrid.count-1 {
             let audioName: String = newNames[i]
             
-            let suffixStart = audioName.lastIndex(of: ".")
-            let btnTitle = audioName.substring(to: suffixStart!)
+            
+            let start = audioName.index(audioName.firstIndex(of: "_")!, offsetBy: 1)
+            let end = audioName.index(audioName.lastIndex(of: ".")!, offsetBy: 0)
+            let btnTitle = String(audioName[start..<end])
             capBtnGrid[i].setTitle(btnTitle, for: .normal)
             
             if (i==randIndexCorrect) {
@@ -68,12 +70,12 @@ class AudioViewController: UIViewController {
 
     func getNewAudioNames() -> [String] {
         let fm = FileManager.default
-        let path = (Bundle.main.resourcePath!) + "/Captcha files/Sounds" //THIS!! USE / not \
+        let path = (Bundle.main.resourcePath!) //THIS!! USE / not \
         let directory = try! fm.contentsOfDirectory(atPath: path)
         var newNames: [String] = []
         while newNames.count < capBtnGrid.count {
             let randIndex = Int.random(in: 0...directory.count-1)
-            if !newNames.contains(directory[randIndex]) {
+            if directory[randIndex].hasSuffix(".wav") && !newNames.contains(directory[randIndex]) {
                 newNames.append(directory[randIndex])
             }
             
@@ -84,23 +86,26 @@ class AudioViewController: UIViewController {
     
     //[DONE] TODO: change this to use UITapGestureRecognizer since UIImageViews don't default respond to user interaction
     @IBAction func initialAudioSamplePlayed(_ sender: Any) {
-        var player: AVAudioPlayer!
-        
+//        var player: AVAudioPlayer = nil
+        print("here!")
 //        let url = Bundle.main.url(forResource: self.correctKey, withExtension: "wav")
 //        player = try! AVAudioPlayer(contentsOf: url!)
 //        player.play()
-        
+        print(self.correctKey)
     
-        let path = (Bundle.main.resourcePath!) + "/Captcha files/Sounds/" + self.correctKey
+        //let path = (Bundle.main.resourcePath!) + "/Captcha files/Sounds/" + self.correctKey
+        //let path = Bundle.main.resourcePath! + self.correctKey
+        
+        let url = Bundle.main.url(forResource: self.correctKey.replacingOccurrences(of: ".wav", with: ""), withExtension: "wav")
         //let myURL: URL
-        player = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-        
-        
+        let player = try! AVAudioPlayer(contentsOf:  url!) //URL(fileURLWithPath: path))
+      
         
         //let directory = try! fm.contentsOfDirectory(atPath: path)
 //       let url = Bundle.main.url(forResource: notesIndexed[noteTag], withExtension: "wav")
 //        player = try! AVAudioPlayer(contentsOf: path + "/" + self.correctKey)
-        player.play() //TODO: fix this part....
+        //player.prepareToPlay()
+        player.play() //TODO: fix this part....runs but doesn't play?
     }
     
     @IBAction func buttonPressed(_ sender: CaptchaButton) {
